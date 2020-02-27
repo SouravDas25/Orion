@@ -13,7 +13,7 @@ public class SinglyLinkedList<T> implements List<T> , Iterable<T> {
     private static Logger log = LogManager.getLogger(SinglyLinkedList.class);
     Node<T> head;
     Node<T> tail;
-    long size;
+    int size;
 
     public SinglyLinkedList() {
         this.size = 0;
@@ -21,7 +21,7 @@ public class SinglyLinkedList<T> implements List<T> , Iterable<T> {
         this.tail = null;
     }
 
-    public T get(long index) {
+    public T get(int index) {
         if(index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -34,16 +34,18 @@ public class SinglyLinkedList<T> implements List<T> , Iterable<T> {
 
     public void append(T value) {
         if (this.tail == null) {
-            this.tail = new Node<T>();
+            this.tail = new Node<>();
             this.head = this.tail;
+            this.tail.data = value;
+        } else {
+            this.tail.next = new Node<T>();
+            this.tail = this.tail.next;
+            this.tail.data = value;
         }
-        this.tail.data = value;
-        this.tail.next = new Node<T>();
-        this.tail = this.tail.next;
         this.size++;
     }
 
-    public long size() {
+    public int size() {
         return this.size;
     }
 

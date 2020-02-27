@@ -1,20 +1,20 @@
-package com.orion.structures;
+package com.orion.structures.linkedlist;
 
-
-import com.orion.structures.linkedlist.SinglyLinkedList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import java.util.Iterator;
 
-public class SinglyLinkedListTest {
+import static org.junit.Assert.*;
 
-    private static Logger log = LogManager.getLogger(SinglyLinkedListTest.class);
+public class LinkedListTest {
+
+    private static Logger log = LogManager.getLogger(LinkedListTest.class);
 
     @Test
     public void main() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedList<Integer>();
+        LinkedList<Integer> list = new LinkedList<Integer>();
 
         list.append(30);
         list.append(30);

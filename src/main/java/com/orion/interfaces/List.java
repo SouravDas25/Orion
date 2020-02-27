@@ -1,10 +1,10 @@
 package com.orion.interfaces;
 
-public interface List<T> {
+public interface List<T>{
 
-    T get(long index);
+    T get(int index);
 
     void append(T value);
 
-    long size();
+    int size();
 }
