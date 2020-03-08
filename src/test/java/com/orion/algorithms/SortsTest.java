@@ -25,7 +25,7 @@ public class SortsTest {
         list.add(7);
         list.add(5);
         log.info("{}, ", list);
-        Sorts.quickSort(list);
+        Sorts.heapify(list);
         log.info("{}, ", list);
     }
 }
